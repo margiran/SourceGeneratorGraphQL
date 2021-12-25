@@ -1,7 +1,4 @@
-using System;
-using GraphQLProject.Models;
 using GraphQLProject.Mongo;
-using GraphQLProject.Repositories;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,7 +11,7 @@ public class DbInstaller : IServiceInstallers
     {
         services.AddMongoDB(Configuration);
     
-        services.AddScoped<IRepository<Category,Guid>,Repository<Category,Guid>>();
+       // services.AddScoped<IRepository<Category,Guid>,Repository<Category,Guid>>();
 
 
     }

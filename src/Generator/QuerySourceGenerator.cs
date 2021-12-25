@@ -60,7 +60,7 @@ namespace {mainMethod.ContainingNamespace.ToDisplayString()}.GraphQL
             //var typeName = mainMethod.ContainingType.Name;
            // builder.AppendLine(splitClass[1].Replace(className,generateClassName));
             // Add the source code to the compilation
-             context.AddSource($"Gquery.cs", SourceText.From(builder.ToString(),Encoding.UTF8));
+             context.AddSource($"query.g.cs", SourceText.From(builder.ToString(),Encoding.UTF8));
         }
 
         public void Initialize(GeneratorInitializationContext context)

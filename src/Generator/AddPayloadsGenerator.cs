@@ -38,7 +38,7 @@ namespace {mainMethod.ContainingNamespace.ToDisplayString()}.GraphQL
                 //var typeName = mainMethod.ContainingType.Name;
                 // builder.AppendLine(splitClass[1].Replace(className,generateClassName));
                 // Add the source code to the compilation
-                context.AddSource($"GAddPayloads.cs", SourceText.From(builder.ToString(), Encoding.UTF8));
+                context.AddSource($"AddPayloads.g.cs", SourceText.From(builder.ToString(), Encoding.UTF8));
             }
 
             public void Initialize(GeneratorInitializationContext context)
