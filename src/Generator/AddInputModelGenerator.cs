@@ -40,7 +40,7 @@ namespace {mainMethod.ContainingNamespace.ToDisplayString()}.GraphQL
                 var props = model.GetRoot().DescendantNodes().OfType<PropertyDeclarationSyntax>().Select(p=>$"{p.Type} {p.Identifier}").ToList();
 
                 builder.Append($@"
-    public record Add{className}TInput({string.Join(",", props)});  
+    public record Add{className}Input({string.Join(",", props)});  
 ");
             }
             builder.AppendLine("}");

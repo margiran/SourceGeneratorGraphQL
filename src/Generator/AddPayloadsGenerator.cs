@@ -30,7 +30,7 @@ namespace {mainMethod.ContainingNamespace.ToDisplayString()}.GraphQL
                     var className = classDeclaration.Identifier.ToString();
 
                     builder.Append($@"
-    public record Add{className}TPayload({className} model);
+    public record Add{className}Payload({className} model);
 
 ");
                 }
