@@ -1,8 +1,8 @@
+using System;
 using System.Threading;
 using System.Threading.Tasks;
-using GraphQLProject.GraphQL.CategoryRecords;
 using GraphQLProject.Models;
-using GraphQLProject.Services;
+using GraphQLProject.Repositories;
 using HotChocolate;
 using HotChocolate.Subscriptions;
 
@@ -14,18 +14,16 @@ namespace GraphQLProject.GraphQL
         [GraphQLDescription("Adds a Category.")]
         public async Task<AddCategoryPayload> AddCategoryAsync(
             AddCategoryInput input,
-            [ScopedService] ICategoryService service,
+            [Service] IRepository<Category,Guid> service,
             [Service] ITopicEventSender eventSender,
             CancellationToken cancellationToken
             ) 
             {
-                var category = new Category{
-                    Name=input.Name
-                };
+                var category = new Category(input.Name);
 
-                await service.AddAsync(input.Name);
+                await service.AddAsync(category);
 
-                await eventSender.SendAsync(nameof(Subscription.OnCategoryAdded), category, cancellationToken);
+                //await eventSender.SendAsync(nameof(Subscription.OnCategoryAdded), category, cancellationToken);
 
                 return new AddCategoryPayload(category);
             }

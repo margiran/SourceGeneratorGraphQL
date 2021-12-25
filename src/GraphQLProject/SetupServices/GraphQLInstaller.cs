@@ -1,5 +1,5 @@
 using GraphQLProject.GraphQL;
-using GraphQLProject.GraphQL.CategoryRecords;
+//using GraphQLProject.GraphQL.CategoryRecords;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,9 +15,9 @@ namespace GraphQLProject.SetupServices
                 .AddQueryType<Query>()
                 .AddMutationType<Mutation>()
                 .AddSubscriptionType<Subscription>()
-                .AddType<CategoryType>()
-                .AddType<AddCategoryInputType>()
-                .AddType<AddCategoryPayloadType>()
+                //.AddType<CategoryType>()
+                //.AddType<AddCategoryInputType>()
+                //.AddType<AddCategoryPayloadType>()
                 .AddFiltering()
                 .AddSorting()
                 .AddInMemorySubscriptions();

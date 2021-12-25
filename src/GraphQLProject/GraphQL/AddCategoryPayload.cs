@@ -1,6 +1,6 @@
 using GraphQLProject.Models;
 
-namespace GraphQLProject.GraphQL.CategoryRecords
+namespace GraphQLProject.GraphQL
 {
     public record AddCategoryPayload(Category category);
 }

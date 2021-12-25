@@ -1,4 +1,5 @@
 using GraphQL.Server.Ui.Voyager;
+using GraphQLProject.Mongo;
 using GraphQLProject.SetupServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -49,6 +50,8 @@ namespace GraphQLProject
                 GraphQLEndPoint = "/graphql",
                 Path = "/graphql-voyager"
             });
+        //    app.ApplicationServices.GetRequiredService<IDatabaseInitializer>().InitializerAsync();
+            PrepareDatabase.PrepareDB(app);
         }
     }
 }
