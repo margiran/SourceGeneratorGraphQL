@@ -10,7 +10,7 @@ namespace GraphQLProject.Models
         [DoNotExpose]
         [BsonId]
         public Guid Id { get; set; }
-        [GraphQLDescription($"Name of Category.")] //NOT nessesary just description 
+        [GraphQLDescription($"Name of Category.")] 
         public string Name { get; set; }
         [DoNotExpose]
         public DateTime CreateAt => DateTime.UtcNow;
